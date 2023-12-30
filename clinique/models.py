@@ -16,7 +16,7 @@ class Medecin(models.Model):
     prenom = models.CharField(max_length=100)
     dn = models.DateField()
     specialite = models.CharField(max_length=100)
-    departement=models.CharField(max_length=50)
+    departement=models.CharField(max_length=50, default='Département Temporaire')
     tel_regex = RegexValidator(
         regex=r'^(05|06|07)[0-9]{8}$',
         message="Le numéro de téléphone doit contenir 10 chiffres commançant par 05 ou 06 ou 07."
@@ -43,7 +43,7 @@ class RendezVous(models.Model):
     medecin = models.ForeignKey(Medecin, on_delete=models.CASCADE)
     date = models.DateField()
     heure = models.TimeField()
-    departement=models.CharField(max_length=50)
+    departement=models.CharField(max_length=50, default='Département Temporaire')
 
 
     def __str__(self):
