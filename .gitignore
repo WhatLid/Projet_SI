@@ -1,3 +1,4 @@
 #ignore the env_projet_si directory
 env_projet_si/
 __pycache__/
+clinique/__pycache__/
