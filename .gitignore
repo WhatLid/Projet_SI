@@ -2,3 +2,4 @@
 env_projet_si/
 __pycache__/
 clinique/__pycache__/
+db.sqlite3
