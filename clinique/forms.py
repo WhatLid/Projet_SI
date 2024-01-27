@@ -1,10 +1,16 @@
 from django import forms
-from .models import RendezVous, Medecin
+from .models import *
 
-class DemRdvForm(forms.ModelForm):
+class inscriptionForm(forms.ModelForm):
     class Meta:
-        model = RendezVous
+        model = Patient
         fields = '__all__'  
+
+
+class ConnexionForm(forms.ModelForm):
+    class Meta:
+        model= Compte
+        fields= '__all__'
 
 class MedecinForm(forms.ModelForm):
     class Meta:

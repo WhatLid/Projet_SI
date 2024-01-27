@@ -1,17 +1,38 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import DemRdvForm, MedecinForm
+from .forms import  *
 
-def DemRdvView(request):
+def inscriptionView(request):
     if request.method == 'POST':
-        form = DemRdvForm(request.POST)
+        form = inscriptionForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('pagesuc')  
     else:
-        form = DemRdvForm()
+        form = inscriptionForm()
 
     #return render(request, 'DemRdv.html', {'form': form}) 
-    return render(request, 'DemRdv.html', {'form': form})
+    return render(request, 'inscription.html', {'form': form})
+
+
+def connexionView(request):
+   
+    if request.method == 'POST':
+        form = ConnexionForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password =form.cleaned_data['password']
+            
+        try:
+            patient = Patient.objects.get(email=email, password=password)
+        except Patient.DoesNotExist:
+            return render(request, 'connexion.html', {'form': form, 'message':'Identifiants incorrects'} )
+
+        return redirect('pagesuc')  
+    else:
+        form = ConnexionForm()
+
+    #return render(request, 'DemRdv.html', {'form': form}) 
+    return render(request, 'connexion.html', {'form': form})  
 
 def successView(request):
     return render(request,'pagesuccess.html')

@@ -10,9 +10,15 @@ class Patient(models.Model):
     sexe = models.CharField(max_length=1, choices=choix_sexe, default='F')
     adresse = models.CharField(max_length=100, null=True)
     nss = models.IntegerField(unique=True)
+    email = models.EmailField(unique=True,null=True, blank=True)
+    password = models.CharField(max_length=128,null=True, blank=True)
 
     def __str__(self):
         return f"{self.nom} {self.prenom}"
+    
+class Compte(models.Model):
+    email= models.EmailField(unique=True)
+    password= models.CharField(max_length=128)
 
 class Departement(models.Model):
     nom = models.CharField(max_length=100)
