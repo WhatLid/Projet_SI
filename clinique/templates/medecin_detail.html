@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Medecin</title>
+</head>
+<body>
+    <h2>Informations du Médecin</h2>
+    <p>Nom: {{ medecin.nom }}</p>
+
+    <h2>Modifier les Informations</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+</body>
+</html>
