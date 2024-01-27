@@ -105,3 +105,15 @@ class PrescriptionMedicale(models.Model):
     acte_medical = models.ManyToManyField(ActeMedical, blank=True)
     chirurgie = models.ManyToManyField(Chirurgie, blank=True)
     medicaments = models.ManyToManyField(Medicament)
+
+
+
+class demRendezVous(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date = models.DateField()
+    heure = models.TimeField()
+    departement = models.ForeignKey(Departement, on_delete=models.CASCADE)
+    sujet = models.TextField(default="")
+
+    def __str__(self):
+        return f"{self.patient},{self.date} {self.heure}"

@@ -59,3 +59,22 @@ def profil(request):
 
     # Passer le patient à la template
     return render(request, 'profil.html', {'patient': patient})
+
+
+def rdv(request):
+    if request.method == 'POST':
+        form = rdvForm(request.POST)
+        if form.is_valid():
+            patient_email = request.session.get('patient_email', None)
+
+            patient = Patient.objects.get(email=patient_email)
+            rdv = form.save(commit=False)
+            rdv.patient = patient
+            rdv.save()
+            
+            return redirect('pagesuc')  
+    else:
+        form = rdvForm()
+
+    #return render(request, 'DemRdv.html', {'form': form}) 
+    return render(request, 'rdv.html', {'form': form})
