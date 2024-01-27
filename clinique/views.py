@@ -24,6 +24,9 @@ def connexionView(request):
             
         try:
             patient = Patient.objects.get(email=email, password=password)
+
+            request.session['patient_email'] = email
+            return redirect('profil')
         except Patient.DoesNotExist:
             return render(request, 'connexion.html', {'form': form, 'message':'Identifiants incorrects'} )
 
@@ -47,3 +50,12 @@ def medecin_detail(request,medecin_id):
             form.save()
             
     return render(request, 'medecin_detail.html', {'medecin': medecin, 'form': form})
+
+
+def profil(request):
+    # Récupérer le patient avec l'email donné
+    patient_email = request.session.get('patient_email', None)
+    patient = get_object_or_404(Patient, email=patient_email)
+
+    # Passer le patient à la template
+    return render(request, 'profil.html', {'patient': patient})
