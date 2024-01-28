@@ -1,0 +1,103 @@
+html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoJo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9 url('fond.jpg') center top no-repeat fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #333;
+            color: #fff;
+        }
+
+        button {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mon Site Web</h1>
+    </header>
+
+    <section>
+        <img src="img3.jpg" alt="Image 1">
+        <p>Description de l'image 1.</p>
+
+        <img src="" alt="Image 2">
+        <p>Description de l'image 2.</p>
+
+        <!-- Ajoutez autant d'images que nécessaire avec leurs descriptions -->
+
+        <button id="scrollToTop">Revenir en Haut</button>
+    </section>
+
+    <footer>
+        <h2>Contact et Informations</h2>
+        <p>Adresse: [Votre adresse]</p>
+        <p>Email: [Votre email]</p>
+        <p>Téléphone: [Votre numéro de téléphone]</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollToTop").style.display = "block";
+            } else {
+                document.getElementById("scrollToTop").style.display = "none";
+            }
+        }
+
+        document.getElementById("scrollToTop").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+
+</body>
+</html>

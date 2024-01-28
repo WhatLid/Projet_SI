@@ -8,6 +8,13 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'inscription.css'%}">
     <style>
+  /* Reset des styles par défaut pour assurer la cohérence sur différents navigateurs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Style pour le corps de la page */
 body {
     font-family: 'Arial', sans-serif;
@@ -29,13 +36,13 @@ h2 {
 }
 
 /* Style pour la liste des Patients */
-ul {
+ul#patients-list {
     list-style-type: none;
     padding: 0;
 }
 
 /* Style pour chaque élément de la liste des Patients */
-li {
+ul#patients-list li {
     background-color: #ecf0f1;
     color: #2c3e50;
     padding: 15px;
@@ -46,12 +53,18 @@ li {
 }
 
 /* Style pour chaque élément de la liste des Patients sans dossier médical */
-li.no-dossier {
+ul#patients-list li.no-dossier {
     background-color: #e74c3c;
     color: #fff;
 }
 
 /* Style pour la liste des Rendez-vous */
+ul#rendezvous-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style pour chaque élément de la liste des Rendez-vous */
 ul#rendezvous-list li {
     background-color: #2ecc71;
     color: #fff;
@@ -60,6 +73,26 @@ ul#rendezvous-list li {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     display: block;
+}
+
+/* Ajout de marges automatiques pour centrer le contenu */
+.container {
+    margin: auto;
+    max-width: 800px;
+}
+
+/* Style pour les médias de petite taille */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    ul#patients-list li,
+    ul#rendezvous-list li {
+        font-size: 0.9em;
+    }
 }
 
 

@@ -5,8 +5,11 @@ def inscriptionView(request):
     if request.method == 'POST':
         form = inscriptionForm(request.POST)
         if form.is_valid():
+            email = form.cleaned_data['email']
+            request.session['patient_email'] = email
             form.save()
-            return redirect('pagesuc')  
+
+            return redirect('profil')  
     else:
         form = inscriptionForm()
 
@@ -161,3 +164,7 @@ def medecin_dashboard_view(request):
 
     return render(request, 'dashboard.html', context)
 
+
+
+def homeView(request):
+    return render(request,'home.html')
