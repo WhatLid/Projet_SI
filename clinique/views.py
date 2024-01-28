@@ -65,9 +65,10 @@ def profil(request):
     patient_email = request.session.get('patient_email', None)
     patient = get_object_or_404(Patient, email=patient_email)
     rendezvous = RendezVous.objects.filter(patient=patient)
+    prescriptions = PrescriptionMedicale.objects.filter(rendezvous__patient=patient)
 
     # Passer le patient à la template
-    return render(request, 'profil.html', {'patient': patient, 'rendezvous': rendezvous})
+    return render(request, 'profil.html', {'patient': patient, 'prescriptions': prescriptions})
 
 
 def rdv(request):

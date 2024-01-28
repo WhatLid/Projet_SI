@@ -40,15 +40,25 @@
       <hr>
 
 
-      <h1 >Rendez-vous du Patient</h2>
-        <br>
-        <br>
-    <ul>
-        {% for rdv in rendezvous %}
-            <li>{{ rdv.date }} à {{ rdv.heure }} - {{ rdv.departement }} - {{ rdv.sujet }}</li>
-        {% endfor %}
-    </ul>
-   
+      <h1>Prescriptions médicales du Patient</h1>
+<ul>
+    {% for prescription in prescriptions %}
+        <li>
+            Rendez-vous du {{ prescription.rendezvous.date }} à {{ prescription.rendezvous.heure }} :
+            {% for acte in prescription.acte_medical.all %}
+               <br> {{ acte.nom }},
+            {% endfor %}
+            {% for chirurgie in prescription.chirurgie.all %}
+                <br>{{ chirurgie.nom }},
+            {% endfor %}
+            {% for medicament in prescription.medicaments.all %}
+            <br>{{ medicament.nom }} (Posologie: {{ medicament.posologie }}),
+                
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+
     </div>
 </body>
 </html>
