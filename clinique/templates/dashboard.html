@@ -7,33 +7,92 @@
     <title>Accueil</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'inscription.css'%}">
+    <style>
+/* Style pour le corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px;
+}
 
+/* Style pour le titre */
+h1 {
+    color: #3498db;
+    margin-bottom: 30px;
+}
+
+/* Style pour les sections Patients et Rendez-vous */
+h2 {
+    color: #27ae60;
+    margin-top: 40px;
+}
+
+/* Style pour la liste des Patients */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style pour chaque élément de la liste des Patients */
+li {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Style pour chaque élément de la liste des Patients sans dossier médical */
+li.no-dossier {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Style pour la liste des Rendez-vous */
+ul#rendezvous-list li {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+    </style>
 
 </head>
 <body>
-    <h1>Tableau de bord du médecin {{ medecin.nom }} {{ medecin.prenom }}</h1>
-
-    <h2>Patients :</h2>
-    <ul>
-        {% for patient in patients %}
-            <li>{{ patient.nom }} {{ patient.prenom }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Rendez-vous :</h2>
-    <ul>
-        {% for rdv in rendezvous %}
-            <li>{{ rdv.patient.nom }} {{ rdv.patient.prenom }} - {{ rdv.date }} {{ rdv.heure }}</li>
-        {% endfor %}
-    </ul>
-
-
-    <h2>Dossiers Médicaux :</h2>
-<ul>
-    {% for dossier_medical in dossiers_medicaux %}
-        <li>{{ dossier_medical.description }}</li>
-    {% endfor %}
-</ul>
+    <body>
+        <h1>Tableau de bord du médecin {{ medecin.nom }} {{ medecin.prenom }}</h1>
+    
+        <h2>Patients :</h2>
+        <ul id="patients-list">
+            {% for patient in patients %}
+                <li class="{% if not patient.dossiermedical %}no-dossier{% endif %}">
+                    {{ patient.nom }} {{ patient.prenom }}
+                    {% if patient.dossiermedical %}
+                        - Dossier médical : {{ patient.dossiermedical.description }}
+                    {% else %}
+                        - Aucun dossier médical
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    
+        <h2>Rendez-vous :</h2>
+        <ul id="rendezvous-list">
+            {% for rdv in rendezvous %}
+                <li>{{ rdv.patient.nom }} {{ rdv.patient.prenom }} - {{ rdv.date }} {{ rdv.heure }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+    
+    
 
 
    
