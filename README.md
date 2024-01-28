@@ -57,25 +57,7 @@ Le projet est développé en utilisant le framework Django, offrant une structur
 <!-- GETTING STARTED -->
 ## GETTING STARTED
 
-### Configuration Locale
-
-Pour obtenir une copie locale fonctionnelle du projet, suivez ces étapes simples :
-
-### Prérequis
-
-Assurez-vous d'avoir installé les outils suivants sur votre machine :
-
-* Python : Le projet est développé en utilisant Python.
-* pip : Le gestionnaire de paquets pour Python.
-  
-
-### Etapes d'Installation
-
-Voici un exemple de la façon dont vous pouvez fournir des instructions pour configurer votre projet localement. Pour obtenir une copie locale opérationnelle, suivez ces étapes simples :
-
----
-
-# Configuration Locale
+## Configuration Locale
 
 Pour obtenir une copie locale fonctionnelle du projet, suivez ces étapes simples :
 
@@ -131,7 +113,7 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
 
 Une fois que vous avez configuré votre environnement local, suivez ces étapes pour utiliser le projet :
 
-## 1. Lancement du Serveur de Développement
+1. **Lancement du Serveur de Développement**
 
 Exécutez la commande suivante pour démarrer le serveur de développement :
 ```bash
@@ -140,11 +122,11 @@ python manage.py runserver
 
 Le serveur sera accessible à l'adresse [http://localhost:8000/](http://localhost:8000/).
 
-## 2. Accès à l'Application
+2. **Accès à l'Application**
 
 Ouvrez votre navigateur web et visitez l'URL [http://localhost:8000/](http://localhost:8000/) pour accéder à l'application.
 
-## 3. Fonctionnalités Principales
+3. **Fonctionnalités Principales**
 
 Explorez les différentes fonctionnalités offertes par l'application, notamment :
 
@@ -157,7 +139,7 @@ Explorez les différentes fonctionnalités offertes par l'application, notamment
 - **Medecin:**
         `connexionmed/`
 - **Patient:**
-        `home/
+        `home/`
 - **Admin:**
         `admin`
 
@@ -199,6 +181,7 @@ Si vous souhaitez contribuer au projet, veuillez suivre ces étapes :
 ## Contact
 
 MEKIDECHE Walid - walidmekideche18@gmail.com
+
 BOUTER Ramzi - ramzibouter6@gmail.com
 
 Project Link: [https://github.com/WhatLid/Projet_SI](https://github.com/WhatLid/Projet_SI)
