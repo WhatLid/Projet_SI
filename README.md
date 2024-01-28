@@ -88,7 +88,7 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
 
 1. **Clonez le Référentiel :**
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-projet.git
+    git clone https://github.com/WhatLid/Projet_SI.git
     ```
 
 2. **Accédez au Répertoire du Projet :**
@@ -112,23 +112,18 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
         ```bash
         source venv/bin/activate
         ```
-
-5. **Installez les Dépendances :**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-6. **Appliquez les Migrations Django :**
+        
+5. **Appliquez les Migrations Django :**
     ```bash
     python manage.py migrate
     ```
 
-7. **Lancez le Serveur de Développement :**
+6. **Lancez le Serveur de Développement :**
     ```bash
     python manage.py runserver
     ```
 
-8. **Accédez à l'Application dans votre Navigateur :**
+7. **Accédez à l'Application dans votre Navigateur :**
     Ouvrez votre navigateur web et visitez [http://localhost:8000/](http://localhost:8000/) pour accéder à l'application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
