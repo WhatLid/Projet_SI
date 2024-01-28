@@ -67,12 +67,18 @@ class RendezVous(models.Model):
     def __str__(self):
         return f"{self.patient},{self.date} {self.heure}"
 
+# Modèle pour la description du dossier médical
 class DossierMedical(models.Model):
     patient = models.OneToOneField(Patient, on_delete=models.CASCADE)
-    description = models.TextField()
+    antecedents_medicaux = models.TextField(blank=True, null=True)
+    allergies = models.TextField(blank=True, null=True)
+    traitements_en_cours = models.TextField(blank=True, null=True)
+    notes_supplementaires = models.TextField(blank=True, null=True)
+    rhesus_sanguin = models.CharField(max_length=10, blank=True, null=True)
 
     def __str__(self):
         return f"Dossier médical de {self.patient.nom} {self.patient.prenom}"
+
 
 class ActeMedical(models.Model):
     nom = models.CharField(max_length=100)
@@ -91,7 +97,7 @@ class Chirurgie(models.Model):
         return f"{self.nom}"
     
 class SalleOperation(models.Model):
-    nom = models.CharField(max_length=100, unique=True)
+    nom = models.CharField(max_length=10, unique=True)
 
     def __str__(self):
         return f"Salle {self.nom}"

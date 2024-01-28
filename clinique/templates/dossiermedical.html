@@ -60,32 +60,26 @@ li {
             </ul>
             </nav>
 
-        <h1>Tableau de bord du médecin {{ medecin.nom }} {{ medecin.prenom }}</h1>
-    <hr><br>
-        <h2>Patients :</h2>
-        <ul id="patients-list">
-            {% for patient in patients %}
-                <li class="{% if not patient.dossiermedical %}no-dossier{% endif %}">
-                    {{ patient.nom }} {{ patient.prenom }}
-                    {% if patient.dossiermedical %}
-                        - <a href="{% url 'afficher_dossier_medical' patient_email=patient.email %}">Voir le dossier médical</a>
-                    {% else %}
-                        - Aucun dossier médical
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-        
-    <hr>
-    <br>
-        <h2>Rendez-vous :</h2>
-        <br>
 
-                <ul id="rendezvous-list">
-            {% for rdv in rendezvous %}
-                -<li>{{ rdv.patient.nom }} {{ rdv.patient.prenom }} - {{ rdv.date }} {{ rdv.heure }}</li>
-            {% endfor %}
-        </ul>
+            <h1>Dossier médical de {{ patient.nom }} {{ patient.prenom }}</h1>
+            <br>
+            <hr>
+            
+            <ul>
+                <li><strong>Antécédents médicaux:</strong> {{ dossier.antecedents_medicaux }}</li>
+                <hr>
+                <li><strong>Allergies:</strong> {{ dossier.allergies }}</li>
+                <hr>
+                <li><strong>Traitements en cours:</strong> {{ dossier.traitements_en_cours }}</li>
+                <hr>
+                <li><strong>Notes supplémentaires:</strong> {{ dossier.notes_supplementaires }}</li>
+                <hr>
+                <li><strong>Rhésus sanguin:</strong> {{ dossier.rhesus_sanguin }}</li>
+                <hr>
+            </ul>
+            
+
+
     </body>
     
     

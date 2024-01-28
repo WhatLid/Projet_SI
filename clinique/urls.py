@@ -15,5 +15,6 @@ urlpatterns = [
     path('rdv/', views.rdv, name='rdv'),
     path('medecin/<int:medecin_id>/', views.medecin_detail, name='medecin_detail'),
     path('redirect-to-admin-medecin/', views.adminmedecin ,name='adminmedecin'),
+    path('afficher_dossier_medical/<str:patient_email>/', views.afficher_dossier_medical, name='afficher_dossier_medical'),
     ]
   

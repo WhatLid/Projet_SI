@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+# views.py
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
+from .models import DossierMedical
 from .forms import  *
 
 def inscriptionView(request):
@@ -177,3 +181,21 @@ def connected(request):
 
 def adminmedecin(request):
     return redirect('/adminmedecin/')
+
+
+
+
+""" def afficher_dossier_medical(request, patient_email):
+    patient = get_object_or_404(User, email=patient_email)
+    dossier_medical = get_object_or_404(DossierMedical, patient=patient)
+    return render(request, 'dossiermedical.html', {'patient': patient, 'dossier_medical': dossier_medical}) """
+
+def afficher_dossier_medical(request, patient_email):
+    # Récupérer le patient avec l'email donné
+    patient = get_object_or_404(Patient, email=patient_email)
+
+    # Récupérer le dossier médical du patient
+    dossier = get_object_or_404(DossierMedical, patient=patient)
+
+    return render(request, 'dossiermedical.html', {'patient': patient, 'dossier': dossier})
+

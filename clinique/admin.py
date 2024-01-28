@@ -31,9 +31,5 @@ from .admin import admin
 adminmedecin.register(Patient)
 adminmedecin.register(RendezVous)
 adminmedecin.register(DossierMedical)
-adminmedecin.register(ActeMedical)
-adminmedecin.register(Chirurgie)
-adminmedecin.register(SalleOperation)
-adminmedecin.register(Medicament)
 adminmedecin.register(PrescriptionMedicale)
 
