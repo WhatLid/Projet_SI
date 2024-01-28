@@ -69,9 +69,9 @@ body, html {
 }
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  max-width: 720px;
+  maxx-width: 720px;
   margin: 20px 0px;
   height: 100px;
   list-style: none;
@@ -103,3 +103,137 @@ body, html {
     background-position-x: 390px;
   }
 }
+
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ... (Styles précédents) ... */
+
+.content {
+  /* ... (Styles précédents) ... */
+}
+
+.features {
+  margin-top: 20px;
+}
+
+.features h2 {
+  color: #333;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+/* ... (Styles suivants) ... */
+/* ... (Styles précédents) ... */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ... (Styles suivants) ... */
+
+/* ... (CSS précédent) ... */
+
+.social-media-section ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.social-media-section ul li {
+  list-style: none;
+}
+
+.social-media-section ul li a {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #404040;
+  margin: 0 30px;
+  transition: .5s;
+}
+
+/* ... (CSS suivant) ... */
+
+
+/* ... (Styles précédents) ... */
+
+.contact-section {
+  background: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #404040;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #404040;
+  margin-bottom: 15px;
+}
+
+/* ... (Styles suivants) ... */
