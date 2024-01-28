@@ -13,15 +13,15 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+          
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Utilisation</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contributing">Contribution</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -47,12 +47,17 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * HTML
 * CSS
 
+**Structure du Projet**
+Le projet est développé en utilisant le framework Django, offrant une structure robuste et modulaire. Le modèle de données est conçu pour représenter de manière cohérente les entités clés d'une clinique, tandis que les vues et les contrôleurs facilitent une expérience utilisateur fluide.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Configuration Locale
+## GETTING STARTED
+
+### Configuration Locale
 
 Pour obtenir une copie locale fonctionnelle du projet, suivez ces étapes simples :
 
@@ -87,7 +92,7 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
 
 1. **Clonez le Référentiel :**
     ```bash
-    git clone https://github.com/WhatLid/Projet_SI.git
+    git clone https://github.com/votre-utilisateur/votre-projet.git
     ```
 
 2. **Accédez au Répertoire du Projet :**
@@ -111,30 +116,52 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
         ```bash
         source venv/bin/activate
         ```
-        
+
 5. **Appliquez les Migrations Django :**
     ```bash
     python manage.py migrate
     ```
-
-6. **Lancez le Serveur de Développement :**
-    ```bash
-    python manage.py runserver
-    ```
-
-7. **Accédez à l'Application dans votre Navigateur :**
-    Ouvrez votre navigateur web et visitez [http://localhost:8000/](http://localhost:8000/) pour accéder à l'application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Utilisation
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Une fois que vous avez configuré votre environnement local, suivez ces étapes pour utiliser le projet :
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+## 1. Lancement du Serveur de Développement
+
+Exécutez la commande suivante pour démarrer le serveur de développement :
+```bash
+python manage.py runserver
+```
+
+Le serveur sera accessible à l'adresse [http://localhost:8000/](http://localhost:8000/).
+
+## 2. Accès à l'Application
+
+Ouvrez votre navigateur web et visitez l'URL [http://localhost:8000/](http://localhost:8000/) pour accéder à l'application.
+
+## 3. Fonctionnalités Principales
+
+Explorez les différentes fonctionnalités offertes par l'application, notamment :
+
+- **Gestion des Médecins :** Ajoutez, modifiez et consultez les informations des médecins.
+- **Gestion des Patients :** Ajoutez, modifiez et consultez les informations des patients.
+- **Rendez-vous :** Planifiez et suivez les rendez-vous entre les patients et les médecins.
+- **Dossiers Médicaux :** Accédez aux dossiers médicaux des patients.
+
+## Start Pages
+- **Medecin:**
+        `connexionmed/`
+- **Patient:**
+        `home/
+- **Admin:**
+        `admin`
+
+Adaptez ces instructions en fonction des fonctionnalités spécifiques de votre projet et des actions que vous souhaitez mettre en avant pour les utilisateurs.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,15 +170,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [x] Analyse et définition des besoins
+- [x] Conception en se basant sur la methode **MERISE**
+- [x] Creation des models
+- [x] Ajout des views et forms
+- [x] Ajout des Tamplate (HTML et CSS)
+- [x] Ajout des urls
+- [x] Remplissage de la base de donnée
+- [x] Les tests
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,75 +186,22 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Si vous souhaitez contribuer au projet, veuillez suivre ces étapes :
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Forker le projet.
+2. Créer une nouvelle branche.
+3. Effectuer vos modifications et les valider (commit).
+4. Pousser (push) vers votre fork et soumettre une demande de fusion (pull request).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+MEKIDECHE Walid - walidmekideche18@gmail.com
+BOUTER Ramzi - ramzibouter6@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Project Link: [https://github.com/WhatLid/Projet_SI](https://github.com/WhatLid/Projet_SI)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+ 
