@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inscription.css'%}">
+
+
+</head>
+<body>
+    <h1>Tableau de bord du médecin {{ medecin.nom }} {{ medecin.prenom }}</h1>
+
+    <h2>Patients :</h2>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.nom }} {{ patient.prenom }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Rendez-vous :</h2>
+    <ul>
+        {% for rdv in rendezvous %}
+            <li>{{ rdv.patient.nom }} {{ rdv.patient.prenom }} - {{ rdv.date }} {{ rdv.heure }}</li>
+        {% endfor %}
+    </ul>
+
+   
+    
+</body>
+</html>

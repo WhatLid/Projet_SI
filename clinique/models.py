@@ -19,6 +19,7 @@ class Patient(models.Model):
 class Compte(models.Model):
     email= models.EmailField(unique=True)
     password= models.CharField(max_length=128)
+    est_medecin = models.BooleanField(default=False)
 
 class Departement(models.Model):
     nom = models.CharField(max_length=100)
@@ -29,6 +30,8 @@ class Departement(models.Model):
 class Medecin(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
+    password= models.CharField(max_length=128, default='admin')
+
     dn = models.DateField()
     specialite = models.CharField(max_length=100)
     departement=models.ForeignKey(Departement, on_delete=models.CASCADE)
