@@ -13,7 +13,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-          
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
@@ -48,6 +47,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * CSS
 
 **Structure du Projet**
+
 Le projet est développé en utilisant le framework Django, offrant une structure robuste et modulaire. Le modèle de données est conçu pour représenter de manière cohérente les entités clés d'une clinique, tandis que les vues et les contrôleurs facilitent une expérience utilisateur fluide.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
