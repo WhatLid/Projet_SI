@@ -1,103 +1,56 @@
-html
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoJo</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9 url('fond.jpg') center top no-repeat fixed;
-            background-size: cover;
-            color: #333;
-        }
+    <title>Accueil</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css'%}">
 
-        header {
-            text-align: center;
-            padding: 50px 0;
-        }
 
-        section {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            background: #333;
-            color: #fff;
-        }
-
-        button {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #3498db;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #2980b9;
-        }
-    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Mon Site Web</h1>
-    </header>
-
-    <section>
-        <img src="img3.jpg" alt="Image 1">
-        <p>Description de l'image 1.</p>
-
-        <img src="" alt="Image 2">
-        <p>Description de l'image 2.</p>
-
-        <!-- Ajoutez autant d'images que nécessaire avec leurs descriptions -->
-
-        <button id="scrollToTop">Revenir en Haut</button>
+    <nav>
+        <ul class="menu">
+          <li><a href="{% url 'home' %}">Home</a></li>
+  
+          <li><a href="{% url 'inscription' %}">Inscription</a></li>
+          <li><a href="{% url 'connexion' %}">Connexion</a></li>
+          
+         
+        </ul>
+        </nav>
+    <section id="presentation">
+        <h1>Bienvenue sur notre site</h1>
+        <p>Nous sommes ravis de vous accueillir sur notre site. Découvrez ce que nous avons à vous offrir.</p>
     </section>
 
-    <footer>
-        <h2>Contact et Informations</h2>
-        <p>Adresse: [Votre adresse]</p>
-        <p>Email: [Votre email]</p>
-        <p>Téléphone: [Votre numéro de téléphone]</p>
-    </footer>
+    <!-- Section de contenu -->
+    <section id="contenu">
+        <h2>Notre Histoire</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac quam nec lacus dapibus accumsan.</p>
+        <p>Nullam in lectus nec urna gravida malesuada. Suspendisse consectetur dui nec suscipit congue.</p>
 
-    <script>
-        window.onscroll = function() {scrollFunction()};
+        <h2>Nos Services</h2>
+        <p>Integer ullamcorper, turpis vel cursus tristique, leo nisi convallis quam, eget interdum urna elit id justo.</p>
+        <p>Quisque convallis vulputate ipsum, nec condimentum urna hendrerit a. Duis vel risus et sapien cursus tincidunt.</p>
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("scrollToTop").style.display = "block";
-            } else {
-                document.getElementById("scrollToTop").style.display = "none";
-            }
-        }
+        <h2>Notre Équipe</h2>
+        <p>Curabitur vestibulum quam ac libero suscipit, eu cursus nisi cursus. Maecenas vel sapien et lacus gravida tempus.</p>
+        <p>Phasellus nec odio et ligula finibus ullamcorper non vel nisi. Proin at nunc nec eros gravida pellentesque.</p>
+    </section>
 
-        document.getElementById("scrollToTop").addEventListener("click", function() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-    </script>
+ 
 
+    <!-- Section de contact -->
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question ou demande d'information, n'hésitez pas à nous contacter :</p>
+        <p>Email : contact@votresite.com</p>
+        <p>Téléphone : +33 123 456 789</p>
+    </section>
+
+    
 </body>
 </html>

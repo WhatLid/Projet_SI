@@ -66,11 +66,11 @@ body {
   text-align: center;
 }
 #container {
-  position: relative;
+  position: absolute;
   margin: auto;
   overflow: hidden;
-  width: 700px;
-  height: 250px;
+  width: auto;
+  height: 100vh;
 }
 
 h1 {

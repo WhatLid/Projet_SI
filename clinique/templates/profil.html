@@ -17,18 +17,19 @@
 <body>
    
     <nav>
-        <ul class="menu">
-          <li><a href="">Home</a></li>
+      <ul class="menu">
+        
 
-          <li><a href="{% url 'inscription' %}">Inscription</a></li>
-          <li><a href="{% url 'connexion' %}">Connexion</a></li>
-          <li><a href="">Prendre Rdv</a></li>
-          <li><a href="{% url 'profil' %}">Profil</a></li>
-        </ul>
+
+        <li><a href="{% url 'rdv' %}">Prendre Rdv</a></li>
+        <li><a href="{% url 'profil' %}">Profil</a></li>
+        <li><a href="{% url 'connexion' %}">Deconnexion</a></li>
+      </ul>
       </nav>
 
       <div class="profil-container">
       <h1>Profil du Patient</h1>
+      <br>dddddddddddd
       <p>Nom: {{ patient.nom }}</p>
       <p>Prénom: {{ patient.prenom }}</p>
       <p>Date de Naissance: {{ patient.dn }}</p>
@@ -36,6 +37,17 @@
       <p>Adresse: {{ patient.adresse }}</p>
       <p>Email: {{ patient.email }}</p>
       <p>Numéro de Sécurité Sociale: {{ patient.nss }}</p>
+      <hr>
+
+
+      <h1 >Rendez-vous du Patient</h2>
+        <br>
+        <br>
+    <ul>
+        {% for rdv in rendezvous %}
+            <li>{{ rdv.date }} à {{ rdv.heure }} - {{ rdv.departement }} - {{ rdv.sujet }}</li>
+        {% endfor %}
+    </ul>
    
     </div>
 </body>

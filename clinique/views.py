@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from .forms import  *
 
 def inscriptionView(request):
@@ -59,9 +60,10 @@ def profil(request):
     # Récupérer le patient avec l'email donné
     patient_email = request.session.get('patient_email', None)
     patient = get_object_or_404(Patient, email=patient_email)
+    rendezvous = RendezVous.objects.filter(patient=patient)
 
     # Passer le patient à la template
-    return render(request, 'profil.html', {'patient': patient})
+    return render(request, 'profil.html', {'patient': patient, 'rendezvous': rendezvous})
 
 
 def rdv(request):
@@ -168,3 +170,10 @@ def medecin_dashboard_view(request):
 
 def homeView(request):
     return render(request,'home.html')
+
+def connected(request):
+    return render(request,'connected.html')
+
+
+def adminmedecin(request):
+    return redirect('/adminmedecin/')

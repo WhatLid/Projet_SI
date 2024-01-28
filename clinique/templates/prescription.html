@@ -53,38 +53,14 @@ li {
             <ul class="menu">
               <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
       
-              <li><a href="{% url 'adminmedecin' %}">Admin</a></li>
+              <li><a href="{% url 'inscription' %}">Prescriptions Medicales</a></li>
               
               
              
             </ul>
             </nav>
 
-        <h1>Tableau de bord du médecin {{ medecin.nom }} {{ medecin.prenom }}</h1>
-    <hr><br>
-        <h2>Patients :</h2>
-        <ul id="patients-list">
-            {% for patient in patients %}
-                <li class="{% if not patient.dossiermedical %}no-dossier{% endif %}">
-                    {{ patient.nom }} {{ patient.prenom }}
-                    {% if patient.dossiermedical %}
-                        - Dossier médical : {{ patient.dossiermedical.description }}
-                    {% else %}
-                        - Aucun dossier médical
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    <hr>
-    <br>
-        <h2>Rendez-vous :</h2>
-        <br>
-
-                <ul id="rendezvous-list">
-            {% for rdv in rendezvous %}
-                -<li>{{ rdv.patient.nom }} {{ rdv.patient.prenom }} - {{ rdv.date }} {{ rdv.heure }}</li>
-            {% endfor %}
-        </ul>
+ 
     </body>
     
     
