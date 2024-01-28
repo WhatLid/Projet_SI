@@ -27,6 +27,15 @@
         {% endfor %}
     </ul>
 
+
+    <h2>Dossiers Médicaux :</h2>
+<ul>
+    {% for dossier_medical in dossiers_medicaux %}
+        <li>{{ dossier_medical.description }}</li>
+    {% endfor %}
+</ul>
+
+
    
     
 </body>

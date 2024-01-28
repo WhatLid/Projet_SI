@@ -82,14 +82,82 @@ def rdv(request):
 
 
 
-def connexionViewmed(request):
+""" def connexionViewmed(request):
     if request.method == 'POST':
         form = ConnexionForm(request.POST)
         if form.is_valid():
-            # Le formulaire a passé la validation, le compte est un compte de médecin
-            # Vous pouvez ajouter d'autres actions ici, par exemple, définir une session, etc.
-            return redirect('pagesuc')
+            
+
+            return redirect('dashboard')
+    else:
+        form = ConnexionForm()
+
+    return render(request, 'connexionmed.html', {'form': form}) """
+
+
+def connexionViewmed(request):
+    if request.method == 'POST':
+        form = ConnexionFormmed(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            try:
+                """ compte = Compte.objects.get(email=email, password=password, est_medecin=True) """
+                medecin = Medecin.objects.get(email=email , password=password)
+
+                # Sauvegarder l'email dans la session
+                request.session['medecin_email'] = email
+
+                return redirect('dashboard')
+            except Medecin.DoesNotExist:
+                form.add_error(None, "Identifiants incorrects pour un médecin")
+
     else:
         form = ConnexionForm()
 
     return render(request, 'connexionmed.html', {'form': form})
+
+
+
+""" def medecin_dashboard_view(request):
+    # Récupérer le médecin connecté (vous pouvez utiliser le système d'authentification de Django)
+
+    medecin_email = request.session.get('medecin_email', None)
+
+    medecin = Medecin.objects.get(email=medecin_email)
+    # Récupérer les rendez-vous et les patients associés au médecin
+    rendezvous = medecin.rendezvous_set.all()
+
+    
+    patients = medecin.patient_set.all()
+
+    context = {
+        'medecin': medecin,
+        'rendezvous': rendezvous,
+        'patients': patients,
+    }
+
+    return render(request, 'dashboard.html', context) """
+
+
+def medecin_dashboard_view(request):
+    # Récupérer le médecin connecté (tu peux utiliser le système d'authentification de Django)
+    medecin_email = request.session.get('medecin_email', None)
+    medecin = Medecin.objects.get(email=medecin_email)
+
+    # Récupérer les rendez-vous associés au médecin
+    rendezvous = RendezVous.objects.filter(medecin=medecin)
+
+    # Récupérer les patients associés aux rendez-vous
+    patients = [rdv.patient for rdv in rendezvous]
+
+    context = {
+        'medecin': medecin,
+        'rendezvous': rendezvous,
+        'patients': patients,
+        
+    }
+
+    return render(request, 'dashboard.html', context)
+

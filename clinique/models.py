@@ -57,7 +57,7 @@ class Medecin(models.Model):
         return f"{self.nom} {self.prenom}, {self.specialite},{self.departement}"
 
 class RendezVous(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE , related_name='rendezvous_set')
     medecin = models.ForeignKey(Medecin, on_delete=models.CASCADE)
     date = models.DateField()
     heure = models.TimeField()

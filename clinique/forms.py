@@ -1,5 +1,8 @@
+from urllib import request
 from django import forms
 from .models import *
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import  *
 
 class inscriptionForm(forms.ModelForm):
     class Meta:
@@ -28,20 +31,8 @@ class rdvForm(forms.ModelForm):
 
 
 
-class ConnexionForm(forms.Form):
+class ConnexionFormmed(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
+    
 
-    def clean(self):
-        cleaned_data = super().clean()
-        email = cleaned_data.get('email')
-        password = cleaned_data.get('password')
-
-        # Vérifier si le compte est un compte de médecin
-        try:
-            compte = Compte.objects.get(email=email, password=password, est_medecin=True)
-            medecin = Medecin.objects.get(email=email)
-        except Compte.DoesNotExist:
-            raise forms.ValidationError("Identifiants incorrects pour un médecin")
-
-        return cleaned_data
