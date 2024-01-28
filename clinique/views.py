@@ -78,3 +78,18 @@ def rdv(request):
 
     #return render(request, 'DemRdv.html', {'form': form}) 
     return render(request, 'rdv.html', {'form': form})
+
+
+
+
+def connexionViewmed(request):
+    if request.method == 'POST':
+        form = ConnexionForm(request.POST)
+        if form.is_valid():
+            # Le formulaire a passé la validation, le compte est un compte de médecin
+            # Vous pouvez ajouter d'autres actions ici, par exemple, définir une session, etc.
+            return redirect('pagesuc')
+    else:
+        form = ConnexionForm()
+
+    return render(request, 'connexionmed.html', {'form': form})
