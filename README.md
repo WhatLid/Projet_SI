@@ -74,7 +74,7 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
 
 1. **Clonez le Référentiel :**
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-projet.git
+    git clone https://github.com/WhatLid/Projet_SI.git
     ```
 
 2. **Accédez au Répertoire du Projet :**
@@ -141,7 +141,7 @@ Explorez les différentes fonctionnalités offertes par l'application, notamment
 - **Patient:**
         `home/`
 - **Admin:**
-        `admin`
+        `admin/`
 
 Adaptez ces instructions en fonction des fonctionnalités spécifiques de votre projet et des actions que vous souhaitez mettre en avant pour les utilisateurs.
 
