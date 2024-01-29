@@ -39,8 +39,6 @@ Le système de gestion de clinique vise à simplifier les opérations administra
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * Django
 * Python
 * HTML
@@ -56,10 +54,6 @@ Le projet est développé en utilisant le framework Django, offrant une structur
 
 <!-- GETTING STARTED -->
 ## GETTING STARTED
-
-## Configuration Locale
-
-Pour obtenir une copie locale fonctionnelle du projet, suivez ces étapes simples :
 
 ## Prérequis
 
