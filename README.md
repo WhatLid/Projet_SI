@@ -79,7 +79,7 @@ Adaptez ces instructions en fonction de la structure spécifique de votre projet
 
 2. **Accédez au Répertoire du Projet :**
     ```bash
-    cd votre-projet
+    cd Projet_SI
     ```
 
 3. **Créez un Environnement Virtuel :**
